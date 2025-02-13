@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('./pexels-goumbik-1420701.jpg') no-repeat center center/cover;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.7);
+            background-blend-mode: overlay;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+        }
+
+        .text span {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hello span { animation-delay: calc(var(--index) * 0.1s); }
+        .vijay-royal span { animation-delay: calc(var(--index) * 0.1s); }
+
+        .button-container {
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeInButton 1s ease 2s forwards;
+        }
+
+        @keyframes fadeInButton {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button-container a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #02857d;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background-color: #02665e;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-pic">
+        <img src="./profile.jpg" alt="Profile Picture">
+    </div>
+    <div class="text hello">
+        <span style="--index: 0;">H</span><span style="--index: 1;">e</span><span style="--index: 2;">l</span><span style="--index: 3;">l</span><span style="--index: 4;">o</span><span style="--index: 5;">!</span>
+    </div>
+    <div class="text vijay-royal">
+        <span style="--index: 0;">I </span><span style="--index: 1;"> </span><span style="--index: 2;">A</span><span style="--index: 3;">m</span> <span style="--index: 4;">V</span><span style="--index: 5;">i</span><span style="--index: 6;">j</span><span style="--index: 7;">a</span><span style="--index: 8;">y</span> <span style="--index: 9;">R</span><span style="--index: 10;">o</span><span style="--index: 11;">y</span><span style="--index: 12;">a</span><span style="--index: 13;">l</span>
+    </div>
+    <div class="button-container">
+        <a href="index1.html">Enter</a>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = 'index1.html';
+        }, 15000); // Increased timeout to 5 seconds to allow users to see the full animation
+    </script>
+</body>
+</html>
