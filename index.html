@@ -3,36 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entry Page</title>
+    <title>Vijay Royal | Portfolio Entry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            background: url('./pexels-goumbik-1420701.jpg') no-repeat center center/cover;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             overflow: hidden;
             color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.7);
-            background-blend-mode: overlay;
+            position: relative;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+        }
+
+        /* Animated gradient background */
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(-45deg, #0a0a1a, #1a1a3a, #0a0a2a, #1a1a4a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Particle effect overlay */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            z-index: 1;
         }
 
         .profile-pic {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             overflow: hidden;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 30px rgba(2, 133, 125, 0.6);
+            transition: transform 0.7s ease, box-shadow 0.7s ease;
+            position: relative;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, #02857d, #02c8bd) border-box;
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
         }
 
         .profile-pic:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 0 40px rgba(2, 133, 125, 0.9);
+            animation: none;
         }
 
         .profile-pic img {
@@ -42,23 +108,24 @@
         }
 
         .text {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bold;
             margin: 1rem;
             text-align: center;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+            text-shadow: 0 0 15px rgba(2, 133, 125, 0.8), 0 0 25px rgba(255, 255, 255, 0.6);
         }
 
         .text span {
             display: inline-block;
             opacity: 0;
-            animation: fadeIn 1s ease forwards;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
         }
 
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             0% {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             100% {
                 opacity: 1;
@@ -67,60 +134,333 @@
         }
 
         .hello span { animation-delay: calc(var(--index) * 0.1s); }
-        .vijay-royal span { animation-delay: calc(var(--index) * 0.1s); }
+        .vijay-royal span { animation-delay: calc(var(--index) * 0.1s + 1.2s); }
 
         .button-container {
-            margin-top: 2rem;
+            margin-top: 3rem;
             opacity: 0;
-            animation: fadeInButton 1s ease 2s forwards;
+            animation: fadeInButton 1.2s ease 3s forwards;
         }
 
         @keyframes fadeInButton {
             0% {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px) scale(0.9);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
         .button-container a {
             text-decoration: none;
             color: #ffffff;
-            background-color: #02857d;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            font-size: 1rem;
+            background: linear-gradient(45deg, #02857d, #02c8bd);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
             font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(2, 133, 125, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .button-container a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .button-container a:hover::before {
+            width: 100%;
         }
 
         .button-container a:hover {
-            background-color: #02665e;
-            transform: scale(1.05);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(2, 133, 125, 0.6);
+        }
+
+        /* Glowing circles decoration */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #02857d, #02c8bd);
+            opacity: 0.3;
+            filter: blur(40px);
+            z-index: -1;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -150px;
+            animation: floatCircle 15s ease-in-out infinite;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            right: -100px;
+            animation: floatCircle 12s ease-in-out infinite reverse;
+        }
+
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 20%;
+            animation: floatCircle 10s ease-in-out infinite 2s;
+        }
+
+        @keyframes floatCircle {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Progress bar for auto-redirect */
+        .progress-bar {
+            position: absolute;
+            bottom: 20px;
+            width: 300px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(45deg, #02857d, #02c8bd);
+            border-radius: 4px;
+            animation: progress 15s linear forwards;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Social icons */
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease 3.5s forwards;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(2, 133, 125, 0.4);
+            background: linear-gradient(45deg, #02857d, #02c8bd);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .text {
+                font-size: 2rem;
+            }
+            
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .circle-1, .circle-2, .circle-3 {
+                display: none;
+            }
+            
+            .progress-bar {
+                width: 200px;
+            }
+            
+            .button-container a {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="profile-pic">
-        <img src="./profile.jpg" alt="Profile Picture">
+    <div class="gradient-bg"></div>
+    <div id="particles-js"></div>
+    
+    <!-- Decorative circles -->
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+    
+    <div class="content">
+        <div class="profile-pic">
+            <!-- Placeholder for profile image -->
+            <div style="width:100%; height:100%; background:linear-gradient(45deg, #02857d, #02c8bd); display:flex; align-items:center; justify-content:center;">
+                <span style="font-size:3rem; color:white; font-weight:bold;">VR</span>
+            </div>
+        </div>
+        <div class="text hello">
+            <span style="--index: 0;">H</span>
+            <span style="--index: 1;">e</span>
+            <span style="--index: 2;">l</span>
+            <span style="--index: 3;">l</span>
+            <span style="--index: 4;">o</span>
+            <span style="--index: 5;">!</span>
+        </div>
+        <div class="text vijay-royal">
+            <span style="--index: 0;">I</span>
+            <span style="--index: 1;">'m</span>
+            <span style="--index: 2;"> </span>
+            <span style="--index: 3;">V</span>
+            <span style="--index: 4;">i</span>
+            <span style="--index: 5;">j</span>
+            <span style="--index: 6;">a</span>
+            <span style="--index: 7;">y</span>
+            <span style="--index: 8;"> </span>
+            <span style="--index: 9;">R</span>
+            <span style="--index: 10;">o</span>
+            <span style="--index: 11;">y</span>
+            <span style="--index: 12;">a</span>
+            <span style="--index: 13;">l</span>
+        </div>
+        <div class="button-container">
+            <a href="index1.html">
+                <i class="ri-arrow-right-line"></i>
+                Enter Portfolio
+            </a>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/sunkara-vijay-kumar-a30aa1251" class="social-icon">
+                <i class="ri-linkedin-fill"></i>
+            </a>
+            <a href="https://github.com/Vijayroyal358" class="social-icon">
+                <i class="ri-github-fill"></i>
+            </a>
+            <a href="mailto:vijayroyal358@gmail.com" class="social-icon">
+                <i class="ri-mail-fill"></i>
+            </a>
+        </div>
     </div>
-    <div class="text hello">
-        <span style="--index: 0;">H</span><span style="--index: 1;">e</span><span style="--index: 2;">l</span><span style="--index: 3;">l</span><span style="--index: 4;">o</span><span style="--index: 5;">!</span>
-    </div>
-    <div class="text vijay-royal">
-        <span style="--index: 0;">I </span><span style="--index: 1;"> </span><span style="--index: 2;">A</span><span style="--index: 3;">m</span> <span style="--index: 4;">V</span><span style="--index: 5;">i</span><span style="--index: 6;">j</span><span style="--index: 7;">a</span><span style="--index: 8;">y</span> <span style="--index: 9;">R</span><span style="--index: 10;">o</span><span style="--index: 11;">y</span><span style="--index: 12;">a</span><span style="--index: 13;">l</span>
-    </div>
-    <div class="button-container">
-        <a href="index1.html">Enter</a>
+    
+    <div class="progress-bar">
+        <div class="progress"></div>
     </div>
 
+    <!-- Particle.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
     <script>
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.3, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#02857d",
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1.5,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        });
+
+        // Auto-redirect after 15 seconds
         setTimeout(() => {
             window.location.href = 'index1.html';
-        }, 15000); // Increased timeout to 5 seconds to allow users to see the full animation
+        }, 15000);
+        
+        // Optional: Add click sound effect for the button
+        document.querySelector('.button-container a').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a subtle click sound effect
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 523.25; // C5 note
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.5);
+            
+            // Redirect after sound plays
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 300);
+        });
     </script>
 </body>
 </html>
