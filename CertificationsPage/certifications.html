@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>var t=localStorage.getItem('svk-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certifications | Sunkara Vijay Kumar</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/mainstyles.css">
+<link rel="stylesheet" href="../css/animations.css">
+<style>
+  /* ── CERT GRID ────────────────────────────── */
+  .cert-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .cert-item {
+    background: var(--glass);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                border-color 0.3s ease,
+                box-shadow 0.35s ease;
+  }
+  .cert-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-border);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(201,168,76,0.08);
+  }
+
+  .cert-thumb-wrap {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .cert-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+  }
+  .cert-item:hover .cert-thumb-wrap img {
+    transform: scale(1.06);
+  }
+
+  .cert-item-body {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cert-item-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px; flex-shrink: 0;
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1.1rem;
+    transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.3s ease;
+  }
+  .cert-item:hover .cert-item-icon {
+    transform: scale(1.1) rotate(-5deg);
+    background: rgba(201,168,76,0.25);
+  }
+  .cert-item-name { font-size: 0.92rem; font-weight: 700; color: var(--white); }
+  .cert-item-issuer { font-size: 0.75rem; color: var(--gold); margin-top: 3px; }
+
+  .cert-view-hint {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 0.75rem; color: var(--muted);
+    margin-left: auto; white-space: nowrap;
+    transition: color 0.25s ease;
+  }
+  .cert-item:hover .cert-view-hint { color: var(--gold-light); }
+
+  /* ── LIGHTBOX ────────────────────────────── */
+  #cert-lightbox {
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(5, 9, 26, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    padding: 2rem;
+  }
+  #cert-lightbox.open {
+    opacity: 1; visibility: visible;
+  }
+
+  .lightbox-inner {
+    position: relative;
+    max-width: 900px; width: 100%;
+    background: var(--glass);
+    border: 1px solid var(--gold-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  #cert-lightbox.open .lightbox-inner {
+    transform: scale(1);
+  }
+
+  .lightbox-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(5,9,26,0.6);
+  }
+  .lightbox-title {
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--white);
+  }
+  .lightbox-issuer {
+    font-size: 0.78rem; color: var(--gold); margin-top: 2px;
+  }
+
+  .lightbox-close {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    color: var(--muted); font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.25s ease;
+    flex-shrink: 0;
+  }
+  .lightbox-close:hover {
+    background: rgba(201,168,76,0.15);
+    border-color: var(--gold-border);
+    color: var(--gold);
+    transform: rotate(90deg);
+  }
+
+  .lightbox-img-wrap {
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem;
+    max-height: 75vh;
+    overflow: auto;
+  }
+  .lightbox-img-wrap img {
+    max-width: 100%; max-height: 65vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  .lightbox-footer {
+    padding: 1rem 1.5rem;
+    display: flex; justify-content: flex-end; gap: 1rem;
+    background: rgba(5,9,26,0.6);
+    border-top: 1px solid var(--glass-border);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">SVK</div>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#experience">Experience</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" id="theme-toggle"><i class="ri-sun-line"></i> Light</button>
+    <a href="../index.html" class="hire-btn"><i class="ri-arrow-left-line"></i> Back Home</a>
+  </div>
+</nav>
+
+<section style="padding-top:120px; padding-bottom:6rem;">
+  <div class="sec-label">My Credentials</div>
+  <h2 class="sec-title">All <em>Certifications.</em></h2>
+  <p style="color:var(--muted); margin-bottom:3rem; font-size:1rem;">Click any certificate to view the full image.</p>
+
+  <div class="cert-cards-grid">
+
+    <!-- 1. Azure Data Engineer -->
+    <div class="cert-item" data-fade
+      data-img="assets/img/MS_ADES.png"
+      data-name="Azure Data Engineer Associate"
+      data-issuer="Microsoft Certified">
+      <div class="cert-thumb-wrap">
+        <img src="assets/img/MS_ADES.png" alt="Azure Data Engineer">
+      </div>
+      <div class="cert-item-body">
+        <div class="cert-item-icon"><i class="ri-cloud-line"></i></div>
+        <div>
+          <div class="cert-item-name">Azure Data Engineer Associate</div>
+          <div class="cert-item-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
+        </div>
+        <div class="cert-view-hint"><i class="ri-zoom-in-line"></i> View</div>
+      </div>
+    </div>
+
+    <!-- 2. Power BI -->
+    <div class="cert-item" data-fade
+      data-img="assets/img/MS_PBDAA.png"
+      data-name="Power BI Data Analyst Associate"
+      data-issuer="Microsoft Certified">
+      <div class="cert-thumb-wrap">
+        <img src="assets/img/MS_PBDAA.png" alt="Power BI Data Analyst">
+      </div>
+      <div class="cert-item-body">
+        <div class="cert-item-icon"><i class="ri-bar-chart-2-line"></i></div>
+        <div>
+          <div class="cert-item-name">Power BI Data Analyst Associate</div>
+          <div class="cert-item-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
+        </div>
+        <div class="cert-view-hint"><i class="ri-zoom-in-line"></i> View</div>
+      </div>
+    </div>
+
+    <!-- 3. Azure AI -->
+    <div class="cert-item" data-fade
+      data-img="assets/img/MS_AAF.png"
+      data-name="Azure AI Fundamentals"
+      data-issuer="Microsoft Certified">
+      <div class="cert-thumb-wrap">
+        <img src="assets/img/MS_AAF.png" alt="Azure AI Fundamentals">
+      </div>
+      <div class="cert-item-body">
+        <div class="cert-item-icon"><i class="ri-brain-line"></i></div>
+        <div>
+          <div class="cert-item-name">Azure AI Fundamentals</div>
+          <div class="cert-item-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
+        </div>
+        <div class="cert-view-hint"><i class="ri-zoom-in-line"></i> View</div>
+      </div>
+    </div>
+
+    <!-- 4. Python -->
+    <div class="cert-item" data-fade
+      data-img="assets/img/PEL_Python Course.png"
+      data-name="Python Course for Beginners"
+      data-issuer="Perfect eLearning">
+      <div class="cert-thumb-wrap">
+        <img src="assets/img/PEL_Python Course.png" alt="Python Course">
+      </div>
+      <div class="cert-item-body">
+        <div class="cert-item-icon"><i class="ri-code-s-slash-line"></i></div>
+        <div>
+          <div class="cert-item-name">Python Course for Beginners</div>
+          <div class="cert-item-issuer"><i class="ri-graduation-cap-line"></i> Perfect eLearning</div>
+        </div>
+        <div class="cert-view-hint"><i class="ri-zoom-in-line"></i> View</div>
+      </div>
+    </div>
+
+    <!-- 5. Data Structures Python -->
+    <div class="cert-item" data-fade
+      data-img="assets/img/PEL_DS_Python.png"
+      data-name="Data Structures in Python"
+      data-issuer="Perfect eLearning">
+      <div class="cert-thumb-wrap">
+        <img src="assets/img/PEL_DS_Python.png" alt="Data Structures Python">
+      </div>
+      <div class="cert-item-body">
+        <div class="cert-item-icon"><i class="ri-database-2-line"></i></div>
+        <div>
+          <div class="cert-item-name">Data Structures in Python</div>
+          <div class="cert-item-issuer"><i class="ri-graduation-cap-line"></i> Perfect eLearning</div>
+        </div>
+        <div class="cert-view-hint"><i class="ri-zoom-in-line"></i> View</div>
+      </div>
+    </div>
+
+    <!-- 6. Machine Learning Python -->
+    <div class="cert-item" data-fade
+      data-img="assets/img/PEL_ML_Python.png"
+      data-name="Machine Learning in Python"
+      data-issuer="Perfect eLearning">
+      <div class="cert-thumb-wrap">
+        <img src="assets/img/PEL_ML_Python.png" alt="Machine Learning Python">
+      </div>
+      <div class="cert-item-body">
+        <div class="cert-item-icon"><i class="ri-robot-line"></i></div>
+        <div>
+          <div class="cert-item-name">Machine Learning in Python</div>
+          <div class="cert-item-issuer"><i class="ri-graduation-cap-line"></i> Perfect eLearning</div>
+        </div>
+        <div class="cert-view-hint"><i class="ri-zoom-in-line"></i> View</div>
+      </div>
+    </div>
+
+  </div><!-- end cert-cards-grid -->
+</section>
+
+<!-- ── LIGHTBOX ─────────────────────────────────── -->
+<div id="cert-lightbox" role="dialog" aria-modal="true">
+  <div class="lightbox-inner">
+    <div class="lightbox-header">
+      <div>
+        <div class="lightbox-title" id="lb-title">Certificate</div>
+        <div class="lightbox-issuer" id="lb-issuer"></div>
+      </div>
+      <button class="lightbox-close" id="lb-close" title="Close">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <div class="lightbox-img-wrap">
+      <img id="lb-img" src="" alt="Certificate">
+    </div>
+    <div class="lightbox-footer">
+      <a id="lb-download" href="#" download class="btn-ghost" style="font-size:0.85rem; padding:0.6rem 1.2rem;">
+        <i class="ri-download-2-line"></i> Download
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Sunkara Vijay Kumar</div>
+  <div class="footer-copy">&copy; 2025 &middot; All rights reserved</div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+</footer>
+
+<script src="../js/animations.js"></script>
+<script>
+  // ── Theme ──────────────────────────────────
+  const toggle = document.getElementById('theme-toggle');
+  const saved = localStorage.getItem('svk-theme');
+  if (saved === 'light') {
+    document.body.setAttribute('data-theme','light');
+    toggle.innerHTML = '<i class="ri-moon-line"></i> Dark';
+  } else {
+    toggle.innerHTML = '<i class="ri-sun-line"></i> Light';
+  }
+  toggle.addEventListener('click', () => {
+    const isLight = document.body.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.body.removeAttribute('data-theme');
+      localStorage.setItem('svk-theme','dark');
+      toggle.innerHTML = '<i class="ri-sun-line"></i> Light';
+    } else {
+      document.body.setAttribute('data-theme','light');
+      localStorage.setItem('svk-theme','light');
+      toggle.innerHTML = '<i class="ri-moon-line"></i> Dark';
+    }
+  });
+
+  // ── Lightbox ───────────────────────────────
+  const lightbox   = document.getElementById('cert-lightbox');
+  const lbImg      = document.getElementById('lb-img');
+  const lbTitle    = document.getElementById('lb-title');
+  const lbIssuer   = document.getElementById('lb-issuer');
+  const lbClose    = document.getElementById('lb-close');
+  const lbDownload = document.getElementById('lb-download');
+
+  function openLightbox(imgSrc, name, issuer) {
+    lbImg.src       = imgSrc;
+    lbTitle.textContent  = name;
+    lbIssuer.textContent = issuer;
+    lbDownload.href = imgSrc;
+    lbDownload.download = name + '.png';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { lbImg.src = ''; }, 350);
+  }
+
+  // Click cert items to open
+  document.querySelectorAll('.cert-item').forEach(card => {
+    card.addEventListener('click', () => {
+      const img    = card.getAttribute('data-img');
+      const name   = card.getAttribute('data-name');
+      const issuer = card.getAttribute('data-issuer');
+      openLightbox(img, name, issuer);
+    });
+  });
+
+  // Close button
+  lbClose.addEventListener('click', closeLightbox);
+
+  // Close on backdrop click
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>

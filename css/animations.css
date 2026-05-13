@@ -1,0 +1,387 @@
+/* ─── 1. HERO ENTRANCE ANIMATIONS ──────────────────────── */
+
+/* Ensure elements are invisible ONLY while animation hasn't run */
+.hero-badge,
+.hero-name,
+.hero-title,
+.hero-quote,
+.hero-stats,
+.hero-actions,
+.hero-right {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.hero-badge    { animation: heroSlideDown 0.8s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+.hero-name     { animation: heroSlideUp   1s   cubic-bezier(0.22,1,0.36,1) 0.3s  both; }
+.hero-title    { animation: heroSlideUp   0.9s cubic-bezier(0.22,1,0.36,1) 0.45s both; }
+.hero-quote    { animation: heroSlideUp   0.9s cubic-bezier(0.22,1,0.36,1) 0.6s  both; }
+.hero-stats    { animation: heroSlideUp   0.9s cubic-bezier(0.22,1,0.36,1) 0.75s both; }
+.hero-actions  { animation: heroSlideUp   0.9s cubic-bezier(0.22,1,0.36,1) 0.9s  both; }
+.hero-right    { animation: heroSlideLeft 1.1s cubic-bezier(0.22,1,0.36,1) 0.2s  both; }
+
+/* 'both' fill mode = stays at end state after animating, visible immediately after */
+
+@keyframes heroSlideDown {
+  from { opacity:0; transform:translateY(-24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes heroSlideUp {
+  from { opacity:0; transform:translateY(32px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes heroSlideLeft {
+  from { opacity:0; transform:translateX(48px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes heroSlideRight {
+  from { opacity:0; transform:translateX(-32px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity:0; transform:scale(0.88); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+/* ── 2. SCROLL REVEAL VARIANTS ───────────────────────────── */
+[data-fade]        { opacity:0; transform:translateY(28px); }
+[data-fade="left"] { opacity:0; transform:translateX(-28px); }
+[data-fade="right"]{ opacity:0; transform:translateX(28px); }
+[data-fade="scale"]{ opacity:0; transform:scale(0.93); }
+
+[data-fade].visible,
+[data-fade="left"].visible,
+[data-fade="right"].visible,
+[data-fade="scale"].visible {
+  opacity:1;
+  transform:none;
+  transition:
+    opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+    transform 0.75s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* Stagger children inside a parent */
+[data-stagger] > * { opacity:0; transform:translateY(20px); }
+[data-stagger].visible > *:nth-child(1) { animation: slideUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.05s forwards; }
+[data-stagger].visible > *:nth-child(2) { animation: slideUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
+[data-stagger].visible > *:nth-child(3) { animation: slideUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.25s forwards; }
+[data-stagger].visible > *:nth-child(4) { animation: slideUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.35s forwards; }
+[data-stagger].visible > *:nth-child(5) { animation: slideUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.45s forwards; }
+[data-stagger].visible > *:nth-child(6) { animation: slideUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.55s forwards; }
+
+/* ── 3. NAVIGATION ───────────────────────────────────────── */
+nav {
+  transition:
+    top 0.4s cubic-bezier(0.22,1,0.36,1),
+    width 0.4s cubic-bezier(0.22,1,0.36,1),
+    border-radius 0.4s cubic-bezier(0.22,1,0.36,1),
+    box-shadow 0.3s ease;
+}
+
+.nav-links a {
+  position:relative; padding-bottom:3px;
+}
+.nav-links a::after {
+  content:'';
+  position:absolute; bottom:0; left:0;
+  width:0; height:2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius:2px;
+  transition: width 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width:100%; }
+.nav-links a.active { color: var(--gold-light); }
+
+/* ── 4. BUTTONS ──────────────────────────────────────────── */
+.btn-gold, .hire-btn {
+  position:relative; overflow:hidden;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.3s ease;
+}
+.btn-gold::before, .hire-btn::before {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+  transform:translateX(-100%);
+  transition: transform 0.5s ease;
+}
+.btn-gold:hover::before, .hire-btn:hover::before { transform:translateX(100%); }
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(201,168,76,0.5);
+}
+.btn-gold:active { transform: translateY(-1px); }
+
+.btn-ghost {
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  background: rgba(201,168,76,0.06);
+}
+
+/* ── 5. PROFILE IMAGE ────────────────────────────────────── */
+.profile-card {
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.5s ease;
+}
+.profile-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.12);
+}
+.profile-img {
+  transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.profile-card:hover .profile-img {
+  transform: scale(1.04);
+}
+
+/* ── 6. GLASS CARDS (About, Highlight) ──────────────────── */
+.glass {
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.h-card {
+  transition:
+    transform 0.35s cubic-bezier(0.22,1,0.36,1),
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.35s ease;
+}
+.h-card:hover {
+  transform: translateX(8px);
+  border-color: var(--gold-border);
+  box-shadow: -4px 0 20px rgba(201,168,76,0.08);
+}
+.h-icon {
+  transition: background 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.h-card:hover .h-icon {
+  background: var(--gold-border);
+  transform: rotate(-5deg) scale(1.1);
+}
+
+/* ── 7. EXPERIENCE TIMELINE ──────────────────────────────── */
+.tl-body {
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+.tl-body:hover {
+  border-color: var(--gold-border);
+  box-shadow: 0 8px 32px rgba(201,168,76,0.1), 0 0 0 1px rgba(201,168,76,0.08);
+  transform: translateX(6px);
+}
+
+/* ── 8. SKILLS ───────────────────────────────────────────── */
+.sk-card {
+  transition:
+    transform 0.35s cubic-bezier(0.22,1,0.36,1),
+    border-color 0.3s ease,
+    box-shadow 0.35s ease,
+    background 0.3s ease;
+}
+.sk-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-border);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(201,168,76,0.08);
+  background: var(--glass-hover);
+}
+.sk-icon {
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), background 0.3s ease;
+}
+.sk-card:hover .sk-icon {
+  transform: scale(1.15) rotate(-5deg);
+  background: rgba(201,168,76,0.25);
+}
+.sk-tag {
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  cursor: default;
+}
+.sk-tag:hover {
+  border-color: var(--gold-border);
+  color: var(--gold-light);
+  background: var(--gold-dim);
+}
+
+/* ── 9. PROJECT CARDS ────────────────────────────────────── */
+.proj-card {
+  transition:
+    transform 0.4s cubic-bezier(0.22,1,0.36,1),
+    border-color 0.3s ease,
+    box-shadow 0.4s ease;
+}
+.proj-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold-border);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201,168,76,0.08);
+}
+.proj-img {
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.proj-card:hover .proj-img { transform: scale(1.08); }
+
+.proj-icon-wrap i {
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), color 0.3s ease;
+}
+.proj-card:hover .proj-icon-wrap i {
+  transform: scale(1.2) translateY(-4px);
+  color: var(--gold-light);
+}
+.proj-link {
+  transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.proj-link:hover {
+  opacity: 1;
+  transform: translateX(4px);
+  color: var(--gold-light);
+}
+
+/* ── 10. CERTIFICATION CARDS ─────────────────────────────── */
+.cert-card {
+  transition:
+    transform 0.35s cubic-bezier(0.22,1,0.36,1),
+    border-color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+.cert-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-border);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 20px rgba(201,168,76,0.1);
+}
+.cert-icon-wrap {
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), background 0.3s ease;
+}
+.cert-card:hover .cert-icon-wrap {
+  transform: scale(1.1) rotate(-5deg);
+  background: rgba(201,168,76,0.25);
+}
+
+/* ── 11. CONTACT LINKS ───────────────────────────────────── */
+.c-link {
+  transition:
+    transform 0.3s cubic-bezier(0.22,1,0.36,1),
+    border-color 0.25s ease,
+    box-shadow 0.3s ease;
+}
+.c-link:hover {
+  transform: translateX(6px);
+  border-color: var(--gold-border);
+  box-shadow: 4px 0 20px rgba(201,168,76,0.08);
+}
+.c-link-icon {
+  transition: background 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.c-link:hover .c-link-icon {
+  background: rgba(201,168,76,0.25);
+  transform: scale(1.1);
+}
+
+/* ── 12. FORM INPUTS ─────────────────────────────────────── */
+.form-field input, .form-field textarea {
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.form-field input:focus, .form-field textarea:focus {
+  border-color: var(--gold-border);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.1), 0 4px 16px rgba(201,168,76,0.06);
+  background: var(--glass-hover);
+}
+
+/* ── 13. FOOTER LINKS ────────────────────────────────────── */
+.footer-links a {
+  position: relative; padding-bottom: 2px;
+  transition: color 0.25s ease;
+}
+.footer-links a::after {
+  content:'';
+  position:absolute; bottom:0; left:0;
+  width:0; height:1px;
+  background: var(--gold);
+  transition: width 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.footer-links a:hover::after { width:100%; }
+
+/* ── 14. SECTION TITLE GOLD UNDERLINE ────────────────────── */
+.sec-title em {
+  position: relative; display: inline-block;
+}
+.sec-title em::after {
+  content:'';
+  position:absolute; bottom:-4px; left:0;
+  width:0; height:2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius:2px;
+  transition: width 0.6s cubic-bezier(0.22,1,0.36,1) 0.1s;
+}
+.sec-title.visible em::after { width:100%; }
+
+/* ── 15. STAT NUMBER COUNT GLOW ──────────────────────────── */
+.stat-num {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.stat:hover .stat-num {
+  text-shadow: 0 0 20px rgba(201,168,76,0.6);
+}
+
+/* ── 16. SCROLL TO TOP BUTTON ────────────────────────────── */
+.scroll-top {
+  position:fixed; bottom:2rem; right:2rem; z-index:900;
+  width:44px; height:44px; border-radius:50%;
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  border:1px solid var(--gold-border);
+  color: var(--gold); font-size:1.1rem;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; text-decoration:none;
+  opacity:0; transform:translateY(20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s cubic-bezier(0.22,1,0.36,1),
+    box-shadow 0.3s ease;
+}
+.scroll-top.show {
+  opacity:1; transform:translateY(0);
+}
+.scroll-top:hover {
+  box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+  transform: translateY(-4px);
+}
+
+/* ── 17. BADGE LIVE PULSE ────────────────────────────────── */
+.badge-dot {
+  animation: live 2s ease-in-out infinite;
+}
+@keyframes live {
+  0%   { box-shadow: 0 0 0 0 rgba(34,212,122,0.6); }
+  50%  { box-shadow: 0 0 0 6px rgba(34,212,122,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,212,122,0); }
+}
+
+/* ── 18. GOLD SHIMMER on nav logo ────────────────────────── */
+.nav-logo {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 40%, var(--gold) 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  from { background-position: 0% center; }
+  to   { background-position: 200% center; }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
