@@ -1,79 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<!-- Theme: runs before render to prevent flash -->
-<script>
-  (function(){
-    var t = localStorage.getItem('svk-theme');
-    if (t === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
+  <meta charset="UTF-8">
+  <!-- Theme: runs before render to prevent flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('svk-theme');
+      if (t === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+      // default = dark (no attribute needed)
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunkara Vijay Kumar | Associate Engineer - Network Monitoring & Automation</title>
+  <meta name="description"
+    content="Portfolio of Sunkara Vijay Kumar — Associate Engineer specializing in Network Monitoring & Automation at Parallel Wireless, Bengaluru.">
+  <link rel="canonical" href="https://sunkaravijaykumarportfolio.in/">
+  <meta name="keywords"
+    content="Sunkara Vijay Kumar, Vijay Kumar, Associate Engineer, Telecom Automation Engineer, Network Engineer, Parallel Wireless, Python Automation Engineer, Open RAN Engineer, Telecom Portfolio, Network Monitoring & Automation">
+  <meta name="author" content="Sunkara Vijay Kumar">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Sunkara Vijay Kumar | Associate Engineer">
+  <meta property="og:description"
+    content="Official portfolio of Sunkara Vijay Kumar — Associate Engineer specializing in Network Monitoring & Automation.">
+  <meta property="og:image" content="https://sunkaravijaykumarportfolio.in/assets/profile-pic.jpg">
+  <meta property="og:url" content="https://sunkaravijaykumarportfolio.in">
+  <meta property="og:type" content="website">
+
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/mainstyles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    /* Hero name refined */
+    .hero-name {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+      letter-spacing: -0.5px;
+      font-weight: 700;
     }
-    // default = dark (no attribute needed)
-  })();
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sunkara Vijay Kumar | Network & Telecom Automation Engineer</title>
-<meta name="description" content="Portfolio of Sunkara Vijay Kumar — Network Monitoring & Telecom Automation Engineer at Parallel Wireless, Bengaluru.">
-<link rel="canonical" href="https://sunkaravijaykumarportfolio.in/">
-<meta name="keywords"
-content="Sunkara Vijay Kumar, Vijay Kumar, Telecom Automation Engineer, Network Engineer, Parallel Wireless, Python Automation Engineer, Open RAN Engineer, Telecom Portfolio">
-<meta name="author"
-content="Sunkara Vijay Kumar">
-<meta name="robots"
-content="index, follow">
-<meta property="og:title"
-content="Sunkara Vijay Kumar | Portfolio">
-<meta property="og:description"
-content="Official portfolio of Sunkara Vijay Kumar — Telecom Automation & Network Monitoring Engineer.">
-<meta property="og:image"
-content="https://sunkaravijaykumarportfolio.in/assets/profile-pic.jpg">
-<meta property="og:url"
-content="https://sunkaravijaykumarportfolio.in">
-<meta property="og:type"
-content="website">
 
-  
-<link rel="icon" type="image/png" href="favicon.png">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="css/mainstyles.css">
-<link rel="stylesheet" href="css/animations.css">
-<style>
-/* Hero name refined */
-.hero-name {
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(2.6rem, 4.2vw, 3.8rem);
-  letter-spacing: -0.5px;
-  font-weight: 700;
-}
-/* Profile card clean - no text overlay */
-.hero-right { flex: 0 0 360px; }
-.profile-img {
-  height: 440px;
-  object-position: top center;
-  border-radius: 0;
-}
-.profile-card {
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-/* Hero grid spacing */
-.hero { gap: 5rem; align-items: center; }
-/* Subtitle */
-.hero-title { font-size: 1rem; line-height: 1.8; color: var(--muted); }
-/* Section labels */
-.sec-label { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; }
-</style>
+    /* Profile card clean - no text overlay */
+    .hero-right {
+      flex: 0 0 360px;
+    }
 
-<script type="application/ld+json">
+    .profile-img {
+      height: 440px;
+      object-position: top center;
+      border-radius: 0;
+    }
+
+    .profile-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Hero grid spacing */
+    .hero {
+      gap: 5rem;
+      align-items: center;
+    }
+
+    /* Subtitle */
+    .hero-title {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* Section labels */
+    .sec-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+    }
+  </style>
+
+  <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Person",
   "name":"Sunkara Vijay Kumar",
   "url":"https://sunkaravijaykumarportfolio.in/",
-  "jobTitle":"Network Monitoring & Telecom Automation Engineer",
+  "jobTitle":"Associate Engineer (Network Monitoring & Automation)",
   "worksFor":{
     "@type":"Organization",
     "name":"Parallel Wireless"
@@ -85,510 +99,559 @@ content="website">
 }
 </script>
 </head>
+
 <body>
 
-<!-- ── NAV ──────────────────────────────────────────── -->
-<nav>
-  <div class="nav-logo">SVK</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certifications">Certs</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-right">
-    <button class="theme-btn" id="theme-toggle">
-      <i class="ri-sun-line"></i> Light
-    </button>
-    <a href="#contact" class="hire-btn">
-      <i class="ri-send-plane-line"></i> Hire Me
-    </a>
-  </div>
-</nav>
-
-<!-- ── HERO ──────────────────────────────────────────── -->
-<section class="hero" style="position:relative;overflow:hidden;">
-  <!-- 3D Network Canvas Background -->
-  <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
-  <div class="hero-left" style="position:relative;z-index:1;">
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      Available for Opportunities
-    </div>
-
-    <h1 class="hero-name">
-      Sunkara<br><span class="gold">Vijay Kumar</span>
-    </h1>
-
-    <p class="hero-title">
-      Network Monitoring &amp; Telecom Automation Engineer<br>
-      Parallel Wireless &middot; Bengaluru, India
-    </p>
-
-    <div class="hero-quote">
-      <i class="ri-award-line"></i>
-      <p>Recognized with the STAR Award for building automation solutions that transformed how live 2G/4G networks are monitored and maintained at scale.</p>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">1+</div>
-        <div class="stat-label">Yr at Parallel Wireless</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">2G/4G</div>
-        <div class="stat-label">Telecom Infra</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Microsoft Certs</div>
-      </div>
-    </div>
-
-    <div class="hero-actions">
-      <a href="./assets/Vijay_Kumar_Resume_ATS.pdf" target="_blank" class="btn-gold">
-        <i class="ri-download-2-line"></i> Download Resume
-      </a>
-      <a href="#projects" class="btn-ghost">
-        View Projects <i class="ri-arrow-right-line"></i>
+  <!-- ── NAV ──────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-logo">SVK</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-btn" id="theme-toggle">
+        <i class="ri-sun-line"></i> Light
+      </button>
+      <a href="#contact" class="hire-btn">
+        <i class="ri-send-plane-line"></i> Hire Me
       </a>
     </div>
-  </div>
+  </nav>
 
-  <div class="hero-right" style="position:relative;z-index:1;">
-    <div class="profile-card">
-      <img src="./assets/profile-pic.jpg" alt="Sunkara Vijay Kumar" class="profile-img">
-    </div>
-  </div>
-</section>
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero" style="position:relative;overflow:hidden;">
+    <!-- 3D Network Canvas Background -->
+    <canvas id="hero-canvas"
+      style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+    <div class="hero-left" style="position:relative;z-index:1;">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for Opportunities
+      </div>
 
-<!-- ── ABOUT ──────────────────────────────────────────── -->
-<section id="about" class="section-alt">
-  <div class="sec-label">Who I Am</div>
-  <h2 class="sec-title">Driven by <em>automation.</em><br>Fueled by curiosity.</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>I am a <strong>Network Monitoring and Telecom Automation Engineer</strong> with hands-on experience inside live production environments at <strong>Parallel Wireless</strong>, working at the forefront of Open RAN innovation.</p>
-      <p>My work sits at the intersection of telecom operations and software engineering — building Python solutions that watch networks in real time and alert teams before problems become outages.</p>
-      <p>I hold a <strong>B.Tech in Information Technology</strong> from Sri Venkateswara Engineering College (2024, 80%) and hold three active Microsoft certifications in Azure and Power BI.</p>
-    </div>
-    <div>
-      <div class="h-card" data-fade>
-        <div class="h-icon"><i class="ri-trophy-line"></i></div>
-        <div>
-          <h4>STAR Award &mdash; Parallel Wireless</h4>
-          <p>Recognized for leading telecom automation initiatives that eliminated repetitive manual monitoring and accelerated incident response across production sites.</p>
+      <h1 class="hero-name">
+        Sunkara<br><span class="gold">Vijay Kumar</span>
+      </h1>
+
+      <p class="hero-title">
+        Associate Engineer &middot; Network Monitoring &amp; Automation<br>
+        Parallel Wireless &middot; Bengaluru, India
+      </p>
+
+      <div class="hero-quote">
+        <i class="ri-award-line"></i>
+        <p>Recognized with the STAR Award for building automation solutions that transformed how live 2G/4G networks are
+          monitored and maintained at scale.</p>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">1+</div>
+          <div class="stat-label">Yr at Parallel Wireless</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2G/4G</div>
+          <div class="stat-label">Telecom Infra</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Microsoft Certs</div>
         </div>
       </div>
-      <div class="h-card" data-fade>
-        <div class="h-icon"><i class="ri-base-station-line"></i></div>
-        <div>
-          <h4>Live Production Experience</h4>
-          <p>Managing 2G/4G network health through continuous KPI monitoring, complex troubleshooting, and root cause analysis, backed by a strong focus on automation development.</p>
-        </div>
-      </div>
-      <div class="h-card" data-fade>
-        <div class="h-icon"><i class="ri-code-s-slash-line"></i></div>
-        <div>
-          <h4>Python-First Automation Mindset</h4>
-          <p>Built multiple automated workflows — from Iperf test runners to RRH diagnostics — replacing hours of manual work with scripts that run in seconds.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ── EXPERIENCE ─────────────────────────────────────── -->
-<section id="experience">
-  <div class="sec-label">Career History</div>
-  <h2 class="sec-title">Where I've <em>been.</em></h2>
-  <div class="timeline">
-
-    <div class="tl-item" data-fade>
-      <div class="tl-meta">
-        <div class="tl-company">Parallel Wireless</div>
-        <div class="tl-date">Mar 2025 &ndash; Present</div>
-        <div class="tl-loc">Bengaluru, India</div>
-      </div>
-      <div class="tl-body">
-        <div class="tl-role">Associate Engineer</div>
-        <div class="tl-dept">Telecom Automation &amp; Network Monitoring</div>
-        <ul class="tl-bullets">
-          <li>Monitor telecom KPIs, alarms, and operational health across live 2G/4G production environments using <strong>EMS, Elastic Stack, and Grafana</strong> for proactive visibility.</li>
-          <li>Developed <strong>Python-based automation scripts within a Linux environment</strong>, integrating system-level tasks to streamline repetitive network monitoring and diagnostics.</li>
-          <li>Designed Radio Remote Head troubleshooting tool — accelerated fault resolution and reduced downtime.</li>
-          <li>Developed Iperf-based IP Performance Testing framework for microwave backhaul validation with automated CSV reporting.</li>
-          <li>Strengthened Network Auto Monitoring for event analysis and proactive visibility across multiple sites.</li>
-          <li>Awarded <strong>STAR Award</strong> for automation contributions improving operational efficiency company-wide.</li>
-        </ul>
-      </div>
-    </div>
-
-    <hr class="tl-sep">
-
-    <div class="tl-item" data-fade>
-      <div class="tl-meta">
-        <div class="tl-company">Lets Grow More</div>
-        <div class="tl-date">May &ndash; Jun 2023</div>
-        <div class="tl-loc">Remote</div>
-      </div>
-      <div class="tl-body">
-        <div class="tl-role">Web Development Intern</div>
-        <ul class="tl-bullets">
-          <li>Built responsive web applications using HTML, CSS, JavaScript, and Git deployment workflows.</li>
-          <li>Improved debugging and validation procedures, boosting deployment stability.</li>
-        </ul>
-      </div>
-    </div>
-
-    <hr class="tl-sep">
-
-    <div class="tl-item" data-fade>
-      <div class="tl-meta">
-        <div class="tl-company">Smart Internz</div>
-        <div class="tl-date">Jun &ndash; Aug 2022</div>
-        <div class="tl-loc">Remote</div>
-      </div>
-      <div class="tl-body">
-        <div class="tl-role">Salesforce Developer Intern</div>
-        <ul class="tl-bullets">
-          <li>Increased data accuracy by 15% through workflow validation and reporting enhancements.</li>
-          <li>Optimized reporting procedures that reduced manual verification activities.</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── SKILLS ─────────────────────────────────────────── -->
-<section id="skills" class="section-alt">
-  <div class="sec-label">Technical Profile</div>
-  <h2 class="sec-title">What I bring<br>to the <em>table.</em></h2>
-  <div class="skills-grid">
-    <div class="sk-card" data-fade>
-      <div class="sk-icon"><i class="ri-pulse-line"></i></div>
-      <h3>Network Monitoring</h3>
-      <div class="sk-tags">
-        <span class="sk-tag">KPI Analysis</span>
-        <span class="sk-tag">Alarm Monitoring</span>
-        <span class="sk-tag">Incident Management</span>
-        <span class="sk-tag">Root Cause Analysis</span>
-        <span class="sk-tag">Production Support</span>
-      </div>
-    </div>
-    <div class="sk-card" data-fade>
-      <div class="sk-icon"><i class="ri-router-line"></i></div>
-      <h3>Telecom Technologies</h3>
-      <div class="sk-tags">
-        <span class="sk-tag">2G / 3G / 4G</span>
-        <span class="sk-tag">LTE Architecture</span>
-        <span class="sk-tag">OSS Monitoring</span>
-        <span class="sk-tag">RF Basics</span>
-        <span class="sk-tag">Open RAN</span>
-      </div>
-    </div>
-    <div class="sk-card" data-fade>
-      <div class="sk-icon"><i class="ri-terminal-box-line"></i></div>
-      <h3>Automation &amp; Dev</h3>
-      <div class="sk-tags">
-        <span class="sk-tag">Python</span>
-        <span class="sk-tag">Bash Scripting</span>
-        <span class="sk-tag">SQL</span>
-        <span class="sk-tag">CI/CD Concepts</span>
-        <span class="sk-tag">Git / GitHub</span>
-      </div>
-    </div>
-    <div class="sk-card" data-fade>
-      <div class="sk-icon"><i class="ri-ubuntu-line"></i></div>
-      <h3>Linux &amp; OS</h3>
-      <div class="sk-tags">
-        <span class="sk-tag">Linux Commands</span>
-        <span class="sk-tag">SSH Operations</span>
-        <span class="sk-tag">Cron Jobs</span>
-        <span class="sk-tag">Log Analysis</span>
-      </div>
-    </div>
-    <div class="sk-card" data-fade>
-      <div class="sk-icon"><i class="ri-bar-chart-grouped-line"></i></div>
-      <h3>Data &amp; Reporting</h3>
-      <div class="sk-tags">
-        <span class="sk-tag">Power BI</span>
-        <span class="sk-tag">Streamlit</span>
-        <span class="sk-tag">Microsoft Excel</span>
-        <span class="sk-tag">CSV Reporting</span>
-      </div>
-    </div>
-    <div class="sk-card" data-fade>
-      <div class="sk-icon"><i class="ri-code-line"></i></div>
-      <h3>Web Technologies</h3>
-      <div class="sk-tags">
-        <span class="sk-tag">HTML / CSS</span>
-        <span class="sk-tag">JavaScript</span>
-        <span class="sk-tag">Java</span>
-        <span class="sk-tag">Salesforce</span>
-        <span class="sk-tag">JDBC / Servlets</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROJECTS ───────────────────────────────────────── -->
-<section id="projects">
-  <div class="sec-label">Portfolio</div>
-  <h2 class="sec-title">Work that speaks<br>for <em>itself.</em></h2>
-
-  <div class="proj-section-label"><i class="ri-base-station-line"></i> Professional &amp; Telecom Projects</div>
-  <div class="proj-grid">
-
-    <div class="proj-card" data-fade>
-      <div class="proj-icon-wrap"><i class="ri-speed-up-line"></i></div>
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Iperf</span><span class="ptag">Automation</span></div>
-        <div class="proj-title">Iperf Automation Testing</div>
-        <p class="proj-desc">Automated IP performance testing framework for microwave backhaul links. Generates structured CSV reports for network validation and performance analysis.</p>
-      </div>
-    </div>
-
-    <div class="proj-card" data-fade>
-      <div class="proj-icon-wrap"><i class="ri-radar-line"></i></div>
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Linux</span><span class="ptag">Telecom</span></div>
-        <div class="proj-title">RRH Troubleshooting Workflow</div>
-        <p class="proj-desc">Automated Radio Remote Head diagnostic tool using Python and Linux commands. Minimized troubleshooting turnaround and reduced repetitive manual work.</p>
-      </div>
-    </div>
-
-    <div class="proj-card" data-fade>
-      <div class="proj-icon-wrap"><i class="ri-dashboard-line"></i></div>
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">Power BI</span><span class="ptag">KPI</span><span class="ptag">LTE</span></div>
-        <div class="proj-title">LTE KPI Monitoring Dashboard</div>
-        <p class="proj-desc">Real-time dashboard for RRC, ERAB, S1AP, CSSR and HOSR metrics. Built for telecom teams to detect performance degradation instantly.</p>
-      </div>
-    </div>
-
-    <div class="proj-card" data-fade>
-      <div class="proj-icon-wrap"><i class="ri-eye-line"></i></div>
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">Monitoring</span><span class="ptag">Python</span><span class="ptag">Network</span></div>
-        <div class="proj-title">Network Auto Monitoring</div>
-        <p class="proj-desc">Telecom monitoring workflow for KPI tracking, event detection, and proactive operational visibility across production sites.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="proj-section-label"><i class="ri-code-s-slash-line"></i> Web &amp; Software Projects</div>
-  <div class="proj-grid">
-
-    <div class="proj-card" data-fade>
-      <img src="./assets/project-01.png" alt="Infotsav" class="proj-img">
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">Full Stack</span><span class="ptag">HTML/CSS/JS</span></div>
-        <div class="proj-title">Infotsav Website</div>
-        <p class="proj-desc">College event website with registration system and information portal built for university fest.</p>
-        <div class="proj-links">
-          <a href="https://vijayroyal358.github.io/info_web_3/" target="_blank" class="proj-link"><i class="ri-external-link-line"></i> Live Demo</a>
-          <a href="https://github.com/Vijayroyal358/InfotsavWebiste" target="_blank" class="proj-link"><i class="ri-github-line"></i> GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-fade>
-      <img src="./assets/project-2.png" alt="Portfolio" class="proj-img">
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">HTML/CSS/JS</span><span class="ptag">Responsive</span></div>
-        <div class="proj-title">Personal Portfolio</div>
-        <p class="proj-desc">Responsive personal portfolio showcasing projects, skills, and professional certifications.</p>
-        <div class="proj-links">
-          <a href="https://vijayroyal358.github.io/VijayRoyal_Portfolio/" target="_blank" class="proj-link"><i class="ri-external-link-line"></i> Live Demo</a>
-          <a href="https://github.com/Vijayroyal358/VijayRoyal_Portfolio" target="_blank" class="proj-link"><i class="ri-github-line"></i> GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-fade>
-      <img src="./assets/project-3.png" alt="Book Store" class="proj-img">
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">Java</span><span class="ptag">JDBC</span><span class="ptag">Database</span></div>
-        <div class="proj-title">Online Book Store</div>
-        <p class="proj-desc">Java-based book store management system with full CRUD operations and database integration.</p>
-        <div class="proj-links">
-          <a href="https://github.com/Vijayroyal358/OnlineBookStore" target="_blank" class="proj-link"><i class="ri-github-line"></i> GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-fade>
-      <img src="./assets/project-4.png" alt="Drone Auth" class="proj-img">
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">Security</span><span class="ptag">Research</span><span class="ptag">Networking</span></div>
-        <div class="proj-title">Swarm Drone Authentication</div>
-        <p class="proj-desc">Proxy signature-based drone authentication and leader-selection protocol for next-gen network security.</p>
-        <div class="proj-links">
-          <a href="https://github.com/Vijayroyal358/Swarm-Drone-Authentication" target="_blank" class="proj-link"><i class="ri-github-line"></i> GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-fade>
-      <img src="./assets/project-5.png" alt="Student Form" class="proj-img">
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">HTML/CSS/JS</span><span class="ptag">Forms</span></div>
-        <div class="proj-title">Student Enrollment Form</div>
-        <p class="proj-desc">Clean student enrollment web application with form validation and responsive layout.</p>
-        <div class="proj-links">
-          <a href="https://vijayroyal358.github.io/Student_Enrollment_Form/" target="_blank" class="proj-link"><i class="ri-external-link-line"></i> Live Demo</a>
-          <a href="https://github.com/Vijayroyal358/Student_Enrollment_Form" target="_blank" class="proj-link"><i class="ri-github-line"></i> GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-fade>
-      <img src="./assets/project-6.png" alt="Calculator" class="proj-img">
-      <div class="proj-body">
-        <div class="proj-tags"><span class="ptag">HTML/CSS/JS</span><span class="ptag">Web App</span></div>
-        <div class="proj-title">Simple Calculator</div>
-        <p class="proj-desc">Responsive calculator web application with clean UI and full arithmetic operations.</p>
-        <div class="proj-links">
-          <a href="https://vijayroyal358.github.io/A-Simple-Calculator/" target="_blank" class="proj-link"><i class="ri-external-link-line"></i> Live Demo</a>
-          <a href="https://github.com/Vijayroyal358/A-Simple-Calculator" target="_blank" class="proj-link"><i class="ri-github-line"></i> GitHub</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── CERTIFICATIONS ─────────────────────────────────── -->
-<section id="certifications" class="section-alt">
-  <div class="sec-label">Credentials</div>
-  <h2 class="sec-title">Certified &amp;<br><em>credentialed.</em></h2>
-  <div class="cert-grid">
-    <a href="https://learn.microsoft.com/api/credentials/share/en-us/Vijaykumar-1061/4CCDD6500DB066A?sharingId=F09AB5FC6C683B45" target="_blank" class="cert-card" data-fade>
-      <div class="cert-icon-wrap"><i class="ri-cloud-line"></i></div>
-      <div>
-        <div class="cert-name">Azure Data Engineer Associate</div>
-        <div class="cert-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
-      </div>
-    </a>
-    <a href="https://learn.microsoft.com/api/credentials/share/en-us/Vijaykumar-1061/CAF9D3D5BC75C564?sharingId=F09AB5FC6C683B45" target="_blank" class="cert-card" data-fade>
-      <div class="cert-icon-wrap"><i class="ri-bar-chart-2-line"></i></div>
-      <div>
-        <div class="cert-name">Power BI Data Analyst Associate</div>
-        <div class="cert-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
-      </div>
-    </a>
-    <a href="https://learn.microsoft.com/api/credentials/share/en-us/Vijaykumar-1061/6931883F230F9997?sharingId=F09AB5FC6C683B45" target="_blank" class="cert-card" data-fade>
-      <div class="cert-icon-wrap"><i class="ri-brain-line"></i></div>
-      <div>
-        <div class="cert-name">Azure AI Fundamentals</div>
-        <div class="cert-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
-      </div>
-    </a>
-    <a href="./CertificationsPage/certifications.html" class="cert-card" data-fade>
-      <div class="cert-icon-wrap"><i class="ri-graduation-cap-line"></i></div>
-      <div>
-        <div class="cert-name">Python, ML &amp; Data Structures</div>
-        <div class="cert-issuer"><i class="ri-arrow-right-up-line"></i> Perfect eLearning — View All</div>
-      </div>
-    </a>
-  </div>
-  <div style="text-align:center;margin-top:3rem;" data-fade>
-    <a href="./CertificationsPage/certifications.html" class="btn-gold">
-      <i class="ri-medal-line"></i> View All Certifications
-    </a>
-  </div>
-</section>
-
-
-<!-- ── CONTACT ────────────────────────────────────────── -->
-<section id="contact">
-  <div class="sec-label">Get In Touch</div>
-  <h2 class="sec-title">Let's build something<br><em>great together.</em></h2>
-  <div class="contact-grid">
-    <div>
-      <p class="contact-lead">Open to full-time roles &amp; collaborations.</p>
-      <p class="contact-sub">Whether you're a recruiter, engineering manager, or fellow technologist — I'm happy to connect and explore opportunities in Telecom Automation and Network Engineering.</p>
-      <div class="contact-links">
-        <a href="mailto:vijayroyal358@gmail.com" class="c-link">
-          <div class="c-link-icon"><i class="ri-mail-send-line"></i></div>
-          <span class="c-link-text">vijayroyal358@gmail.com</span>
+      <div class="hero-actions">
+        <a href="./assets/Vijay_Kumar_Resume_ATS.pdf" target="_blank" class="btn-gold">
+          <i class="ri-download-2-line"></i> Download Resume
         </a>
-        <a href="https://www.linkedin.com/in/sunkara-vijay-kumar-a30aa1251" target="_blank" class="c-link">
-          <div class="c-link-icon"><i class="ri-linkedin-box-line"></i></div>
-          <span class="c-link-text">linkedin.com/in/sunkara-vijay-kumar</span>
-        </a>
-        <a href="https://github.com/Vijayroyal358" target="_blank" class="c-link">
-          <div class="c-link-icon"><i class="ri-github-line"></i></div>
-          <span class="c-link-text">github.com/Vijayroyal358</span>
+        <a href="#projects" class="btn-ghost">
+          View Projects <i class="ri-arrow-right-line"></i>
         </a>
       </div>
     </div>
-    <div>
-      <form id="contactForm">
-        <div class="form-field">
-          <input type="text" id="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-field">
-          <input type="email" id="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-field">
-          <textarea id="message" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn-gold" style="width:100%;justify-content:center;border:none;">
-          <i class="ri-send-plane-fill"></i> Send Message
-        </button>
-        <p id="responseMessage" style="margin-top:1rem;text-align:center;color:#22d47a;font-size:0.9rem;"></p>
-      </form>
+
+    <div class="hero-right" style="position:relative;z-index:1;">
+      <div class="profile-card">
+        <img src="./assets/profile-pic.jpg" alt="Sunkara Vijay Kumar - Associate Engineer at Parallel Wireless"
+          class="profile-img">
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── FOOTER ─────────────────────────────────────────── -->
-<footer>
-  <div class="footer-logo">Sunkara Vijay Kumar</div>
-  <div class="footer-copy">&copy; 2025 &middot; Network Monitoring &amp; Telecom Automation Engineer &middot; Bengaluru, India</div>
-  <div class="footer-links">
-    <a href="https://github.com/Vijayroyal358" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/sunkara-vijay-kumar-a30aa1251" target="_blank">LinkedIn</a>
-  </div>
-</footer>
+  <!-- ── ABOUT ──────────────────────────────────────────── -->
+  <section id="about" class="section-alt">
+    <div class="sec-label">Who I Am</div>
+    <h2 class="sec-title">Driven by <em>automation.</em><br>Fueled by curiosity.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am an <strong>Associate Engineer</strong> specializing in <strong>Network Monitoring and
+            Automation</strong> with hands-on experience inside
+          live production environments at <strong>Parallel Wireless</strong>, working at the forefront of Open RAN
+          innovation.</p>
+        <p>My work sits at the intersection of telecom operations and software engineering — building Python solutions
+          that watch networks in real time and alert teams before problems become outages.</p>
+        <p>I hold a <strong>B.Tech in Information Technology</strong> from Sri Venkateswara Engineering College (2024,
+          80%) and hold three active Microsoft certifications in Azure and Power BI.</p>
+      </div>
+      <div>
+        <div class="h-card" data-fade>
+          <div class="h-icon"><i class="ri-trophy-line"></i></div>
+          <div>
+            <h4>STAR Award &mdash; Parallel Wireless</h4>
+            <p>Recognized for leading telecom automation initiatives that eliminated repetitive manual monitoring and
+              accelerated incident response across production sites.</p>
+          </div>
+        </div>
+        <div class="h-card" data-fade>
+          <div class="h-icon"><i class="ri-base-station-line"></i></div>
+          <div>
+            <h4>Live Production Experience</h4>
+            <p>Managing 2G/4G network health through continuous KPI monitoring, complex troubleshooting, and root cause
+              analysis, backed by a strong focus on automation development.</p>
+          </div>
+        </div>
+        <div class="h-card" data-fade>
+          <div class="h-icon"><i class="ri-code-s-slash-line"></i></div>
+          <div>
+            <h4>Python-First Automation Mindset</h4>
+            <p>Built multiple automated workflows — from Iperf test runners to RRH diagnostics — replacing hours of
+              manual work with scripts that run in seconds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Scroll to top -->
-<a href="#" id="scroll-top" class="scroll-top" title="Back to top">
-  <i class="ri-arrow-up-line"></i>
-</a>
+  <!-- ── EXPERIENCE ─────────────────────────────────────── -->
+  <section id="experience">
+    <div class="sec-label">Career History</div>
+    <h2 class="sec-title">Where I've <em>been.</em></h2>
+    <div class="timeline">
 
-<script src="js/contactform.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/hero-canvas.js"></script>
-<script>
-  // ── Theme toggle (instant, no lag) ──────────────────────
-  const toggle = document.getElementById('theme-toggle');
+      <div class="tl-item" data-fade>
+        <div class="tl-meta">
+          <div class="tl-company">Parallel Wireless</div>
+          <div class="tl-date">Mar 2025 &ndash; Present</div>
+          <div class="tl-loc">Bengaluru, India</div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-role">Associate Engineer</div>
+          <div class="tl-dept">Telecom Automation &amp; Network Monitoring</div>
+          <ul class="tl-bullets">
+            <li>Monitor telecom KPIs, alarms, and operational health across live 2G/4G production environments using
+              <strong>EMS, Elastic Stack, and Grafana</strong> for proactive visibility.
+            </li>
+            <li>Developed <strong>Python-based automation scripts within a Linux environment</strong>, integrating
+              system-level tasks to streamline repetitive network monitoring and diagnostics.</li>
+            <li>Designed Radio Remote Head troubleshooting tool — accelerated fault resolution and reduced downtime.
+            </li>
+            <li>Developed Iperf-based IP Performance Testing framework for microwave backhaul validation with automated
+              CSV reporting.</li>
+            <li>Strengthened Network Auto Monitoring for event analysis and proactive visibility across multiple sites.
+            </li>
+            <li>Awarded <strong>STAR Award</strong> for automation contributions improving operational efficiency
+              company-wide.</li>
+          </ul>
+        </div>
+      </div>
 
-  function applyTheme(theme) {
-    if (theme === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-      toggle.innerHTML = '<i class="ri-moon-line"></i> Dark';
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      toggle.innerHTML = '<i class="ri-sun-line"></i> Light';
+      <hr class="tl-sep">
+
+      <div class="tl-item" data-fade>
+        <div class="tl-meta">
+          <div class="tl-company">Lets Grow More</div>
+          <div class="tl-date">May &ndash; Jun 2023</div>
+          <div class="tl-loc">Remote</div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-role">Web Development Intern</div>
+          <ul class="tl-bullets">
+            <li>Built responsive web applications using HTML, CSS, JavaScript, and Git deployment workflows.</li>
+            <li>Improved debugging and validation procedures, boosting deployment stability.</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="tl-sep">
+
+      <div class="tl-item" data-fade>
+        <div class="tl-meta">
+          <div class="tl-company">Smart Internz</div>
+          <div class="tl-date">Jun &ndash; Aug 2022</div>
+          <div class="tl-loc">Remote</div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-role">Salesforce Developer Intern</div>
+          <ul class="tl-bullets">
+            <li>Increased data accuracy by 15% through workflow validation and reporting enhancements.</li>
+            <li>Optimized reporting procedures that reduced manual verification activities.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SKILLS ─────────────────────────────────────────── -->
+  <section id="skills" class="section-alt">
+    <div class="sec-label">Technical Profile</div>
+    <h2 class="sec-title">What I bring<br>to the <em>table.</em></h2>
+    <div class="skills-grid">
+      <div class="sk-card" data-fade>
+        <div class="sk-icon"><i class="ri-pulse-line"></i></div>
+        <h3>Network Monitoring</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">KPI Analysis</span>
+          <span class="sk-tag">Alarm Monitoring</span>
+          <span class="sk-tag">Incident Management</span>
+          <span class="sk-tag">Root Cause Analysis</span>
+          <span class="sk-tag">Production Support</span>
+        </div>
+      </div>
+      <div class="sk-card" data-fade>
+        <div class="sk-icon"><i class="ri-router-line"></i></div>
+        <h3>Telecom Technologies</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">2G / 3G / 4G</span>
+          <span class="sk-tag">LTE Architecture</span>
+          <span class="sk-tag">OSS Monitoring</span>
+          <span class="sk-tag">RF Basics</span>
+          <span class="sk-tag">Open RAN</span>
+        </div>
+      </div>
+      <div class="sk-card" data-fade>
+        <div class="sk-icon"><i class="ri-terminal-box-line"></i></div>
+        <h3>Automation &amp; Dev</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Python</span>
+          <span class="sk-tag">Bash Scripting</span>
+          <span class="sk-tag">SQL</span>
+          <span class="sk-tag">CI/CD Concepts</span>
+          <span class="sk-tag">Git / GitHub</span>
+        </div>
+      </div>
+      <div class="sk-card" data-fade>
+        <div class="sk-icon"><i class="ri-ubuntu-line"></i></div>
+        <h3>Linux &amp; OS</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Linux Commands</span>
+          <span class="sk-tag">SSH Operations</span>
+          <span class="sk-tag">Cron Jobs</span>
+          <span class="sk-tag">Log Analysis</span>
+        </div>
+      </div>
+      <div class="sk-card" data-fade>
+        <div class="sk-icon"><i class="ri-bar-chart-grouped-line"></i></div>
+        <h3>Data &amp; Reporting</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">Power BI</span>
+          <span class="sk-tag">Streamlit</span>
+          <span class="sk-tag">Microsoft Excel</span>
+          <span class="sk-tag">CSV Reporting</span>
+        </div>
+      </div>
+      <div class="sk-card" data-fade>
+        <div class="sk-icon"><i class="ri-code-line"></i></div>
+        <h3>Web Technologies</h3>
+        <div class="sk-tags">
+          <span class="sk-tag">HTML / CSS</span>
+          <span class="sk-tag">JavaScript</span>
+          <span class="sk-tag">Java</span>
+          <span class="sk-tag">Salesforce</span>
+          <span class="sk-tag">JDBC / Servlets</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ───────────────────────────────────────── -->
+  <section id="projects">
+    <div class="sec-label">Portfolio</div>
+    <h2 class="sec-title">Work that speaks<br>for <em>itself.</em></h2>
+
+    <div class="proj-section-label"><i class="ri-base-station-line"></i> Professional &amp; Telecom Projects</div>
+    <div class="proj-grid">
+
+      <div class="proj-card" data-fade>
+        <div class="proj-icon-wrap"><i class="ri-speed-up-line"></i></div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Iperf</span><span
+              class="ptag">Automation</span></div>
+          <div class="proj-title">Iperf Automation Testing</div>
+          <p class="proj-desc">Automated IP performance testing framework for microwave backhaul links. Generates
+            structured CSV reports for network validation and performance analysis.</p>
+        </div>
+      </div>
+
+      <div class="proj-card" data-fade>
+        <div class="proj-icon-wrap"><i class="ri-radar-line"></i></div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Linux</span><span
+              class="ptag">Telecom</span></div>
+          <div class="proj-title">RRH Troubleshooting Workflow</div>
+          <p class="proj-desc">Automated Radio Remote Head diagnostic tool using Python and Linux commands. Minimized
+            troubleshooting turnaround and reduced repetitive manual work.</p>
+        </div>
+      </div>
+
+      <div class="proj-card" data-fade>
+        <div class="proj-icon-wrap"><i class="ri-dashboard-line"></i></div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Power BI</span><span class="ptag">KPI</span><span
+              class="ptag">LTE</span></div>
+          <div class="proj-title">LTE KPI Monitoring Dashboard</div>
+          <p class="proj-desc">Real-time dashboard for RRC, ERAB, S1AP, CSSR and HOSR metrics. Built for telecom teams
+            to detect performance degradation instantly.</p>
+        </div>
+      </div>
+
+      <div class="proj-card" data-fade>
+        <div class="proj-icon-wrap"><i class="ri-eye-line"></i></div>
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Monitoring</span><span class="ptag">Python</span><span
+              class="ptag">Network</span></div>
+          <div class="proj-title">Network Auto Monitoring</div>
+          <p class="proj-desc">Telecom monitoring workflow for KPI tracking, event detection, and proactive operational
+            visibility across production sites.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="proj-section-label"><i class="ri-code-s-slash-line"></i> Web &amp; Software Projects</div>
+    <div class="proj-grid">
+
+      <div class="proj-card" data-fade>
+        <img src="./assets/project-01.png" alt="Infotsav" class="proj-img">
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Full Stack</span><span class="ptag">HTML/CSS/JS</span></div>
+          <div class="proj-title">Infotsav Website</div>
+          <p class="proj-desc">College event website with registration system and information portal built for
+            university fest.</p>
+          <div class="proj-links">
+            <a href="https://vijayroyal358.github.io/info_web_3/" target="_blank" class="proj-link"><i
+                class="ri-external-link-line"></i> Live Demo</a>
+            <a href="https://github.com/Vijayroyal358/InfotsavWebiste" target="_blank" class="proj-link"><i
+                class="ri-github-line"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-fade>
+        <img src="./assets/project-2.png" alt="Portfolio" class="proj-img">
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">HTML/CSS/JS</span><span class="ptag">Responsive</span></div>
+          <div class="proj-title">Personal Portfolio</div>
+          <p class="proj-desc">Responsive personal portfolio showcasing projects, skills, and professional
+            certifications.</p>
+          <div class="proj-links">
+            <a href="https://vijayroyal358.github.io/VijayRoyal_Portfolio/" target="_blank" class="proj-link"><i
+                class="ri-external-link-line"></i> Live Demo</a>
+            <a href="https://github.com/Vijayroyal358/VijayRoyal_Portfolio" target="_blank" class="proj-link"><i
+                class="ri-github-line"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-fade>
+        <img src="./assets/project-3.png" alt="Book Store" class="proj-img">
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Java</span><span class="ptag">JDBC</span><span
+              class="ptag">Database</span></div>
+          <div class="proj-title">Online Book Store</div>
+          <p class="proj-desc">Java-based book store management system with full CRUD operations and database
+            integration.</p>
+          <div class="proj-links">
+            <a href="https://github.com/Vijayroyal358/OnlineBookStore" target="_blank" class="proj-link"><i
+                class="ri-github-line"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-fade>
+        <img src="./assets/project-4.png" alt="Drone Auth" class="proj-img">
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">Security</span><span class="ptag">Research</span><span
+              class="ptag">Networking</span></div>
+          <div class="proj-title">Swarm Drone Authentication</div>
+          <p class="proj-desc">Proxy signature-based drone authentication and leader-selection protocol for next-gen
+            network security.</p>
+          <div class="proj-links">
+            <a href="https://github.com/Vijayroyal358/Swarm-Drone-Authentication" target="_blank" class="proj-link"><i
+                class="ri-github-line"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-fade>
+        <img src="./assets/project-5.png" alt="Student Form" class="proj-img">
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">HTML/CSS/JS</span><span class="ptag">Forms</span></div>
+          <div class="proj-title">Student Enrollment Form</div>
+          <p class="proj-desc">Clean student enrollment web application with form validation and responsive layout.</p>
+          <div class="proj-links">
+            <a href="https://vijayroyal358.github.io/Student_Enrollment_Form/" target="_blank" class="proj-link"><i
+                class="ri-external-link-line"></i> Live Demo</a>
+            <a href="https://github.com/Vijayroyal358/Student_Enrollment_Form" target="_blank" class="proj-link"><i
+                class="ri-github-line"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-fade>
+        <img src="./assets/project-6.png" alt="Calculator" class="proj-img">
+        <div class="proj-body">
+          <div class="proj-tags"><span class="ptag">HTML/CSS/JS</span><span class="ptag">Web App</span></div>
+          <div class="proj-title">Simple Calculator</div>
+          <p class="proj-desc">Responsive calculator web application with clean UI and full arithmetic operations.</p>
+          <div class="proj-links">
+            <a href="https://vijayroyal358.github.io/A-Simple-Calculator/" target="_blank" class="proj-link"><i
+                class="ri-external-link-line"></i> Live Demo</a>
+            <a href="https://github.com/Vijayroyal358/A-Simple-Calculator" target="_blank" class="proj-link"><i
+                class="ri-github-line"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ─────────────────────────────────── -->
+  <section id="certifications" class="section-alt">
+    <div class="sec-label">Credentials</div>
+    <h2 class="sec-title">Certified &amp;<br><em>credentialed.</em></h2>
+    <div class="cert-grid">
+      <a href="https://learn.microsoft.com/api/credentials/share/en-us/Vijaykumar-1061/4CCDD6500DB066A?sharingId=F09AB5FC6C683B45"
+        target="_blank" class="cert-card" data-fade>
+        <div class="cert-icon-wrap"><i class="ri-cloud-line"></i></div>
+        <div>
+          <div class="cert-name">Azure Data Engineer Associate</div>
+          <div class="cert-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
+        </div>
+      </a>
+      <a href="https://learn.microsoft.com/api/credentials/share/en-us/Vijaykumar-1061/CAF9D3D5BC75C564?sharingId=F09AB5FC6C683B45"
+        target="_blank" class="cert-card" data-fade>
+        <div class="cert-icon-wrap"><i class="ri-bar-chart-2-line"></i></div>
+        <div>
+          <div class="cert-name">Power BI Data Analyst Associate</div>
+          <div class="cert-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
+        </div>
+      </a>
+      <a href="https://learn.microsoft.com/api/credentials/share/en-us/Vijaykumar-1061/6931883F230F9997?sharingId=F09AB5FC6C683B45"
+        target="_blank" class="cert-card" data-fade>
+        <div class="cert-icon-wrap"><i class="ri-brain-line"></i></div>
+        <div>
+          <div class="cert-name">Azure AI Fundamentals</div>
+          <div class="cert-issuer"><i class="ri-microsoft-line"></i> Microsoft Certified</div>
+        </div>
+      </a>
+      <a href="./CertificationsPage/certifications.html" class="cert-card" data-fade>
+        <div class="cert-icon-wrap"><i class="ri-graduation-cap-line"></i></div>
+        <div>
+          <div class="cert-name">Python, ML &amp; Data Structures</div>
+          <div class="cert-issuer"><i class="ri-arrow-right-up-line"></i> Perfect eLearning — View All</div>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:3rem;" data-fade>
+      <a href="./CertificationsPage/certifications.html" class="btn-gold">
+        <i class="ri-medal-line"></i> View All Certifications
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ── CONTACT ────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="sec-label">Get In Touch</div>
+    <h2 class="sec-title">Let's build something<br><em>great together.</em></h2>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-lead">Open to full-time roles &amp; collaborations.</p>
+        <p class="contact-sub">Whether you're a recruiter, engineering manager, or fellow technologist — I'm happy to
+          connect and explore opportunities in Telecom Automation and Network Engineering.</p>
+        <div class="contact-links">
+          <a href="mailto:vijayroyal358@gmail.com" class="c-link">
+            <div class="c-link-icon"><i class="ri-mail-send-line"></i></div>
+            <span class="c-link-text">vijayroyal358@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/sunkara-vijay-kumar-a30aa1251" target="_blank" class="c-link">
+            <div class="c-link-icon"><i class="ri-linkedin-box-line"></i></div>
+            <span class="c-link-text">linkedin.com/in/sunkara-vijay-kumar</span>
+          </a>
+          <a href="https://github.com/Vijayroyal358" target="_blank" class="c-link">
+            <div class="c-link-icon"><i class="ri-github-line"></i></div>
+            <span class="c-link-text">github.com/Vijayroyal358</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <form id="contactForm">
+          <div class="form-field">
+            <input type="text" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-field">
+            <input type="email" id="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-field">
+            <textarea id="message" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn-gold" style="width:100%;justify-content:center;border:none;">
+            <i class="ri-send-plane-fill"></i> Send Message
+          </button>
+          <p id="responseMessage" style="margin-top:1rem;text-align:center;color:#22d47a;font-size:0.9rem;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-logo">Sunkara Vijay Kumar</div>
+    <div class="footer-copy">&copy; 2025 &middot; Associate Engineer | Network Monitoring &amp; Automation &middot;
+      Bengaluru, India</div>
+    <div class="footer-links">
+      <a href="https://github.com/Vijayroyal358" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/sunkara-vijay-kumar-a30aa1251" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <a href="#" id="scroll-top" class="scroll-top" title="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </a>
+
+  <script src="js/contactform.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/hero-canvas.js"></script>
+  <script>
+    // ── Theme toggle (instant, no lag) ──────────────────────
+    const toggle = document.getElementById('theme-toggle');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        toggle.innerHTML = '<i class="ri-moon-line"></i> Dark';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        toggle.innerHTML = '<i class="ri-sun-line"></i> Light';
+      }
+      localStorage.setItem('svk-theme', theme);
     }
-    localStorage.setItem('svk-theme', theme);
-  }
 
-  // Sync button text on load
-  const currentTheme = localStorage.getItem('svk-theme') || 'dark';
-  applyTheme(currentTheme);
+    // Sync button text on load
+    const currentTheme = localStorage.getItem('svk-theme') || 'dark';
+    applyTheme(currentTheme);
 
-  toggle.addEventListener('click', () => {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    applyTheme(isLight ? 'dark' : 'light');
-  });
-</script>
+    toggle.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      applyTheme(isLight ? 'dark' : 'light');
+    });
+  </script>
 </body>
+
 </html>
